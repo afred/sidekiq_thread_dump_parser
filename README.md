@@ -1,8 +1,16 @@
 # SidekiqThreadDumpParser
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/sidekiq_thread_dump_parser`. To experiment with that code, run `bin/console` for an interactive prompt.
+A utility for heping to parse and analyze Sidekiq thread dumps created with:
+```
+kill -TTIN [sidekiq_worker_pid]
+```
 
-TODO: Delete this and the text above, and describe your gem
+Running the above command will dump stack traces of each thread spawned by the
+given Sidekiq worker process ID.
+
+From there, you can feed these lines into `SidekiqThreadDumpParser`, which will
+separate them into different objects for each thread, and provide a few
+convenience methods for parsing the stack traces and analyzing them.
 
 ## Installation
 
